@@ -1,10 +1,48 @@
-//Curso rust
+// ============================================================
+//  CURSO RUST
+// ============================================================
 
-//constantes que nunca cambian su valor y se ponen fuera de las funciones:
+
+// ────────────────────────────────────────────────────────────
+//  CONSTANTES GLOBALES
+// ────────────────────────────────────────────────────────────
+
 const PI: f64 = 3.1416;
 //las constantes siempre van en mayusculas
 const MENSAJE: &str = "Que mal :(";
+
+
+// ────────────────────────────────────────────────────────────
+//  FUNCIONES
+// ────────────────────────────────────────────────────────────
+
+//Funciones, como ya sabemos que en fn main(Aqui va parametros para la funion) -> es el retorno de la funcion.
+
+fn suma(numerochafa1: i32, numerochafa2: i32) -> i32 {
+    return numerochafa1 + numerochafa2;
+}
+
+//funcion que nomas:
+
+fn holaxd(){
+    println!("Holii");
+}
+
+
+// ────────────────────────────────────────────────────────────
+//  MAIN
+// ────────────────────────────────────────────────────────────
+
 fn main() {
+
+    // ── Llamadas a funciones ─────────────────────────────────
+    let resultadoo:i32  = suma(30, 50);
+    println!("{}", resultadoo);
+
+    holaxd();
+
+
+    // ── Tipos de datos y variables ───────────────────────────
     //estas variables son inmutables
     let entero: i64 = 19216800;
     let decimal: f64 = 128.01111;
@@ -19,6 +57,8 @@ fn main() {
     println!("caracter: {}", caracter);
     println!("mi string: {}", mistring);
 
+
+    // ── Tuplas y arrays ──────────────────────────────────────
     //tupla recuerda las posiciones: 0, 1, 2, 3; todo inicia con 0
     let mitupla: (i32, f64, char, &str) = (72, 6.46, 'A', "holi");
     println!("mi tupla: {}", mitupla.3);
@@ -27,7 +67,8 @@ fn main() {
     let miarray: [i64; 5] = [1,2,3,4,5];
     println!("mi numero favorito: {}", miarray[2]);
 
-    //variables mutables
+
+    // ── Variables mutables ───────────────────────────────────
     let mut contadores: i32 = 0;
     contadores = 12;
     println!("contadores: {}", contadores);
@@ -41,6 +82,8 @@ fn main() {
     let mut resultado: i64 = num1+num2;
     println!("Resultado: {}", resultado);
 
+
+    // ── Operadores lógicos ───────────────────────────────────
     //Operadores logicos: comparar con Falso && Verdadero = Falso, !Verdadero o !Falso lo pasa a viceversa: !V = F, el || pasa todo a verdadero.
     let jk: bool = true;
     let kj: bool= false;
@@ -51,6 +94,7 @@ fn main() {
     //comparacion: 10 == 10 es igual, != desigual de 10 != 10, 10 > mayor 10, 10 < menor que 10, se puede como >= o <=
 
 
+    // ── Condicionales — if / else if / match ─────────────────
     //if y else: con ==
     let numerocorto: i16 = 12;
     if numerocorto == 12 {
@@ -78,7 +122,6 @@ fn main() {
     }
 
     //con else if:
-
     if numerocorto != 12 {
         println!("muy bien");
     } else if numerocorto < 50 {
@@ -97,5 +140,46 @@ fn main() {
         _ => println!("no hay nada"),
     }
 
-    
+
+    // ── Ciclos — loop / while / for ──────────────────────────
+    //usando loop
+    let mut numerorandom: i8 = 0;
+    loop {
+        //se imprime Holaaaa 5 veces porque si
+        println!("Holaaaaa");
+        numerorandom += 1; //se suma numerorandom mas 1 y cuando numero random sea a 5 se cancela todo
+        if numerorandom == 5 {
+            println!("fin");
+            break;
+        }
+    }
+
+    //usando while
+    while numerorandom < 10 {
+        println!("Que");
+        numerorandom += 1;
+        //solo se imprimar hasta 10 veces si es menor que 10
+    }
+
+    //uso de for
+    for numerokrazy in 1..10 {
+        println!("numerokrazy: {numerokrazy}");
+    }
+    for elemento in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] {
+        println!("elemento: {elemento}");  //imprime los numeros que estan en [] tanto en numerokrazy y elemento
+    }
+
+
+    // ── Bloques ──────────────────────────────────────────────
+    let x: i32 = 5;
+    let mibloque= {
+        let z = 5;
+        6+z
+    };
+    println!("suma: {}", mibloque);
+
+
+    /*
+    Ownership --------- Apartado
+    */
 }
